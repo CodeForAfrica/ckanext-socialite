@@ -9,3 +9,6 @@ install:
 script: sh bin/travis-run.sh
 after_success:
     - coveralls
+notifications:
+  slack: andela:h1gXVDL11qqNzVV5EWyb9jlp
+  

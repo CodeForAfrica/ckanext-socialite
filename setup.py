@@ -17,7 +17,7 @@ setup(
     # http://packaging.python.org/en/latest/tutorial.html#version
     version='0.0.1',
 
-    description=''''An extension to allow tusers to login through  existing platforms s i.e: Google, Github, Twitter, Facebook etc.'''',
+    description='''An extension to allow tusers to login through  existing platforms s i.e: Google, Github, Twitter, Facebook etc.''',
     long_description=long_description,
 
     # The project's main homepage.

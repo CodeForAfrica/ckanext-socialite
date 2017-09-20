@@ -127,8 +127,8 @@ class SocialitePlugin(plugins.SingletonPlugin):
     #if someone is logged in will be set the parameter c.user
     def identify(self):
     	user_ckan = pylons.session.get('ckanext-google-user')
-            if user_ckan:
-                toolkit.c.user = user_ckan
+        if user_ckan:
+            toolkit.c.user = user_ckan
 
     def logout(self):
 	       self._logout_user()

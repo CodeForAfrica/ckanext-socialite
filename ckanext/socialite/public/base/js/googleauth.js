@@ -36,7 +36,7 @@ var startApp = function() {
 
 
 function attachSignin(element) {
-  console.log(element.id);
+  //console.log(element.id);
   auth2.attachClickHandler(element, {},
       function(googleUser) {
 
@@ -72,6 +72,7 @@ function attachSignin(element) {
 /*get content from meta tag*/
 function getMetaContent(propName) {
   var metas = document.getElementsByTagName('meta');
+  //console.info(metas);
   for (i = 0; i < metas.length; i++) {
 	if (metas[i].getAttribute("name") == propName) {
 		return metas[i].getAttribute("content");

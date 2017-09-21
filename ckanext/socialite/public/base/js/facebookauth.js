@@ -1,3 +1,4 @@
+  // Initaialize and set up Facebook JS SDK
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '646613148876732',
@@ -20,6 +21,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
+  // Check if user is logged in.
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       if(response.status === 'connected'){

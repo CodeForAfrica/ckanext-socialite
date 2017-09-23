@@ -1,0 +1,9 @@
+.socialbtn-container {
+	display: -webkit-flex;
+  display: flex;
+  width: 800px;
+}
+
+.socialbtn{
+  margin: 10px;
+}

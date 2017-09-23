@@ -4,6 +4,7 @@
 
 {% block styles %}
     <link rel="stylesheet" type="text/css" href="/base/css/gbutton.css">
+    <link rel="stylesheet" type="text/css" href="/base/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     {{ super() }}
 {% endblock %}
@@ -13,7 +14,7 @@
 {% set ci=h.googleauth_get_clientid() %}
 {% set hd=h.googleauth_get_hosted_domain() %}
   {{ super() }}
-    <meta name="google-signin-scope" content="profile email">
+    <!-- <meta name="google-signin-scope" content="profile email"> -->
     <meta name="google-signin-client_id" content="928038731402-dr3jhqn0hvlokogkphf3fkk4dna8863u.apps.googleusercontent.com">
 
     <meta name="google-signin-hosted_domain" content="{{ hd }}">

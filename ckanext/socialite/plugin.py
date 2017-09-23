@@ -30,6 +30,7 @@ import pylons.config as config
 import ckan.lib.helpers as helpers
 import requests
 import re
+import logging
 
 
 
@@ -43,7 +44,7 @@ def get_hosted_domain():
     return config.get('ckan.googleauth_hosted_domain', '')
 
 
-class GoogleAuthException(Exception):
+class AuthException(Exception):
     pass
 
 
@@ -78,9 +79,9 @@ class SocialitePlugin(plugins.SingletonPlugin):
                         email_verified = is_email_verified['email']
                         return email_verified
                 else:
-                        raise GoogleAuthException(is_email_verified)
+                        raise AuthException(is_email_verified)
         else:
-                raise GoogleAuthException(res)
+                raise AuthException(res)
 
 
 
@@ -88,13 +89,13 @@ class SocialitePlugin(plugins.SingletonPlugin):
     def get_ckanuser(self, user):
     	import ckan.model
 
-	user_ckan = ckan.model.User.by_name(user)
+    	user_ckan = ckan.model.User.by_name(user)
 
-	if user_ckan:
-		user_dict = toolkit.get_action('user_show')(data_dict={'id': user_ckan.id})
-		return user_dict
-	else:
-		return None
+    	if user_ckan:
+    		user_dict = toolkit.get_action('user_show')(data_dict={'id': user_ckan.id})
+    		return user_dict
+    	else:
+    		return None
 
 
 
@@ -120,7 +121,7 @@ class SocialitePlugin(plugins.SingletonPlugin):
 	#    if res.status_code == 200:
 	#    	del pylons.session['ckanext-google-accesstoken']
 	#    else:
-	#	raise GoogleAuthException('Token not revoked')
+	#	raise AuthException('Token not revoked')
         if 'ckanext-google-user' in pylons.session:
             del pylons.session['ckanext-google-user']
         if 'ckanext-google-email' in pylons.session:
@@ -135,20 +136,26 @@ class SocialitePlugin(plugins.SingletonPlugin):
     	params = toolkit.request.params
 
 	if 'id_token' in params:
-		try:
-			mail_verified = self.verify_email(params['id_token'])
-		except GoogleAuthException, e:
-			toolkit.abort(500)
+		# try:
+		# 	mail_verified = self.verify_email(params['id_token'])
+		# except AuthException, e:
+		# 	toolkit.abort(500)
+		
+		mail_verified = params['email']
 
 		user_account = re.sub('[^A-Za-z0-9]+','_',mail_verified)
 
 		user_ckan = self.get_ckanuser(user_account)
+
+		full_name = params['name']
+        
 
 		if not user_ckan:
 			user_ckan = toolkit.get_action('user_create')(
                     				context={'ignore_auth': True},
                     				data_dict={'email': mail_verified,
                                			'name': user_account,
+                                        'fullname': full_name,
                                			'password': self.get_ckanpasswd()})
 
 		pylons.session['ckanext-google-user'] = user_ckan['name']
@@ -157,8 +164,6 @@ class SocialitePlugin(plugins.SingletonPlugin):
 		#to revoke the Google token uncomment the code below
 		#pylons.session['ckanext-google-accesstoken'] = params['token']
             	pylons.session.save()
-
-
 
     #if someone is logged in will be set the parameter c.user
     def identify(self):

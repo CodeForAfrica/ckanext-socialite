@@ -1,7 +1,5 @@
 {% ckan_extends %}
 
-
-
 {% block primary_content %}
   <section class="module">
     <div class="module-content">
@@ -10,21 +8,20 @@
 			{{ _('Login') }}
 		{% endblock %}
 	</h1>
-
       <fieldset>
         <legend><h4>{{ _('Log in with Google/Github') }}</h4></legend>
-        	<div id="g-signin-button">
-              		<span class="icon"></span>
-              		<span class="button-text">Google</span>
-        	</div>
-          <div id="status">
-            <fb:login-button 
-              scope="public_profile,email"
-              onlogin="checkLoginState();">
-            </fb:login-button>
+        <div class="socialbtn-container">
+          <div id="g-signin-button" class="socialbtn">
+        		<span class="icon"></span>
+        		<span class="button-text">Google</span>
           </div>
+          <div>
+            <div class="fb-login-button socialbtn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
+          </div>
+        </div>
       </fieldset>
     
+
       <br><br>
       <fieldset>
         <legend>

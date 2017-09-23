@@ -9,7 +9,7 @@
     FB.AppEvents.logPageView();   
 
       FB.getLoginStatus(function(response) {
-          console.log(response);
+          console.log(response, 'R1');
       });
   };
 
@@ -21,25 +21,33 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-  // Check if user is logged in.
+  // Check if user is logged into facebook and log user into the app.
   function checkLoginState() {
+    var accessToken;
+    var idToken;
     FB.getLoginStatus(function(response) {
       if(response.status === 'connected'){
-        console.info('API call sucessfull')
-        window.location.replace("/dataset"); //This works! but it won't change the header.
+        accessToken = response.authResponse.accessToken;
+        idToken = response.authResponse.userID;
+        FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email'},
+          function (response) {
+            console.log(response);
+            var fullName = response.first_name + ' ' + response.last_name;
+            var email = response.email;
+            $.ajax({
+              type: 'POST',
+              url:'/user/login',
+              data: {name: fullName, email: email, id_token: idToken, token: accessToken},
+              success: function(res, status, xhr) {
+                window.location.replace("/dataset");
+             },
+            error: function(xhr, status, err) {
+              alert("Login failure: " + err);
+            }
+          });
+      });
       } else {
-        console.info('API call not sucessfull')
         window.location.replace("/user/login");
       }
     });
   }
-
-  // FB.getLoginStatus(function(response) {
-  //     if(response.status === 'connected'){
-  //       console.info('We are connected')
-  //     } else if (response.status === 'not_authorized'){
-  //       console.info('We are not connected')
-  //     } else {
-  //       console.info('We are not even logged in')
-  //     }
-  //   });

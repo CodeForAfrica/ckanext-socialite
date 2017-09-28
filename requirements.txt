@@ -7,7 +7,7 @@ blinker==1.4
 certifi==2017.7.27.1
 cffi==1.10.0
 -e git+https://github.com/andela/ckan.git@142a81543b052583fc2c9800aef2ef2705d9b9d9#egg=ckan
-ckanext-googleauth==0.0.1
+ckanext_auth==0.0.1
 -e git+https://github.com/CodeForAfrica/ckanext-openafrica.git@442db78f79da61a72a136606d9e9ef4412384163#egg=ckanext_openafrica
 -e git+https://github.com/ckan/ckanext-repo.git@53a61097f6103f76583296b12c0858a8f5f2ca3e#egg=ckanext_repo
 -e git+https://github.com/CodeForAfricaLabs/ckanext-socialite.git@514e3b9e3aa36cd868186cf8376e7eeb984e4522#egg=ckanext_socialite

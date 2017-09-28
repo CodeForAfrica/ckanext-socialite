@@ -1,22 +1,24 @@
-'''This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
+'''MIT License
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Affero General Public License for more details.
+Copyright (c) 2017 Code for Africa - LABS
 
-You should have received a copy of the GNU Affero General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-                    GNU AFFERO GENERAL PUBLIC LICENSE
-                       Version 3, 19 November 2007
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.'''
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.'''
 
 
 
@@ -33,8 +35,8 @@ import re
 
 
 
-#get 'ckan.googleauth_clientid' from ini file
-def get_clientid():
+# get 'ckan.googleauth_clientid' from ini file
+def get_google_clientid():
     return config.get('ckan.googleauth_clientid', '')
 
 
@@ -63,26 +65,8 @@ class SocialitePlugin(plugins.SingletonPlugin):
 
     #declare new helper functions
     def get_helpers(self):
-        return {'googleauth_get_clientid': get_clientid,
-		'googleauth_get_hosted_domain': get_hosted_domain}
-
-
-
-    #verify email address within token
-    def verify_email(self, token):
-        res = requests.post('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token='+token, verify=True)
-
-        if res.ok:
-                is_email_verified=json.loads(res.content)
-                if is_email_verified['email_verified'] == 'true':
-                        email_verified = is_email_verified['email']
-                        return email_verified
-                else:
-                        raise GoogleAuthException(is_email_verified)
-        else:
-                raise GoogleAuthException(res)
-
-
+        return {'googleauth_get_clientid': get_google_clientid,
+                'googleauth_get_hosted_domain': get_hosted_domain}
 
     #if exist returns ckan user
     def get_ckanuser(self, user):
@@ -96,8 +80,6 @@ class SocialitePlugin(plugins.SingletonPlugin):
 	else:
 		return None
 
-
-
     #generates a strong password
     def get_ckanpasswd(self):
 	import datetime
@@ -107,24 +89,22 @@ class SocialitePlugin(plugins.SingletonPlugin):
 	passwd = re.sub(r"\s+", "", passwd, flags=re.UNICODE)
 	return passwd
 
-
-
     def _logout_user(self):
         #import pylons
 
 	#to revoke the Google token uncomment the code below
 
-	#if 'ckanext-google-accesstoken' in pylons.session:
-	#    atoken = pylons.session.get('ckanext-google-accesstoken')
+	#if 'ckanext_-accesstoken' in pylons.session:
+	#    atoken = pylons.session.get('ckanext_-accesstoken')
 	#    res = requests.get('https://accounts.google.com/o/oauth2/revoke?token='+atoken)
 	#    if res.status_code == 200:
-	#    	del pylons.session['ckanext-google-accesstoken']
+	#    	del pylons.session['ckanext_-accesstoken']
 	#    else:
 	#	raise GoogleAuthException('Token not revoked')
-        if 'ckanext-google-user' in pylons.session:
-            del pylons.session['ckanext-google-user']
-        if 'ckanext-google-email' in pylons.session:
-            del pylons.session['ckanext-google-email']
+        if 'ckanext_-user' in pylons.session:
+            del pylons.session['ckanext_-user']
+        if 'ckanext_-email' in pylons.session:
+            del pylons.session['ckanext_-email']
         pylons.session.save()
 
 
@@ -132,37 +112,33 @@ class SocialitePlugin(plugins.SingletonPlugin):
     #at every access the email address is checked. if it is authorized ckan username is created and access is given
     def login(self):
 
-    	params = toolkit.request.params
+        params = toolkit.request.params
 
-	if 'id_token' in params:
-		try:
-			mail_verified = self.verify_email(params['id_token'])
-		except GoogleAuthException, e:
-			toolkit.abort(500)
+        if 'id_token' in params:
 
-		user_account = re.sub('[^A-Za-z0-9]+','_',mail_verified)
+            user_account = params['email'].split('@')[0]
+            if user_account.isalnum() is False:
+                user_account = ''.join(e for e in user_account if e.isalnum())
 
-		user_ckan = self.get_ckanuser(user_account)
+            user_ckan = self.get_ckanuser(user_account)
 
-		if not user_ckan:
-			user_ckan = toolkit.get_action('user_create')(
-                    				context={'ignore_auth': True},
-                    				data_dict={'email': mail_verified,
-                               			'name': user_account,
-                               			'password': self.get_ckanpasswd()})
+            if not user_ckan:
+                user_ckan = toolkit.get_action('user_create')(
+                    context={'ignore_auth': True},
+                    data_dict={'email': mail_verified,
+                               'name': user_account,
+                               'password': self.get_ckanpasswd()})
 
-		pylons.session['ckanext-google-user'] = user_ckan['name']
-        	pylons.session['ckanext-google-email'] = mail_verified
+            pylons.session['ckanext_-user'] = user_ckan['name']
+            pylons.session['ckanext_-email'] = params['email']
 
-		#to revoke the Google token uncomment the code below
-		#pylons.session['ckanext-google-accesstoken'] = params['token']
-            	pylons.session.save()
-
-
+            # to revoke the Google token uncomment the code below
+            #pylons.session['ckanext_-accesstoken'] = params['token']
+            pylons.session.save()
 
     #if someone is logged in will be set the parameter c.user
     def identify(self):
-	user_ckan = pylons.session.get('ckanext-google-user')
+	user_ckan = pylons.session.get('ckanext_-user')
         if user_ckan:
             toolkit.c.user = user_ckan
 

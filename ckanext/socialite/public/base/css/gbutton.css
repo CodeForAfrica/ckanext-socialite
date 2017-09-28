@@ -1,4 +1,4 @@
-#g-signin-button {
+#g-signin-button, #github-button {
  display: inline-block;
  background: #4285f4;
  color: white;
@@ -8,6 +8,10 @@
 }
 
 #g-signin-button:hover {
+ cursor: pointer;
+}
+
+#github-button:hover {
  cursor: pointer;
 }
 
@@ -42,13 +46,4 @@ span.button-text {
  font-weight: bold;
  /* Use the Roboto font that is loaded in the <head> */
  font-family: 'Roboto', sans-serif;
-}
-
-#g-signin-button {
- display: inline-block;
- background: #4285f4;
- color: white;
- width: 190px;
- border-radius: 5px;
- white-space: nowrap;
 }

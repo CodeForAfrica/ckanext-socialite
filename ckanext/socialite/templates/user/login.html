@@ -1,7 +1,3 @@
-{% ckan_extends %}
-
-
-
 {% block primary_content %}
   <section class="module">
     <div class="module-content">
@@ -14,9 +10,13 @@
       <fieldset>
         <legend><h4>{{ _('Log in with Google/Github') }}</h4></legend>
 	<div id="g-signin-button">
-      		<span class="icon"></span>
+      		<span class="google-icon"></span>
       		<span class="button-text">Google</span>
 	</div>
+  <div id="github-button" onclick="login()">
+    <span class="github-icon"></span>
+    <span class="button-text">Github</span>
+  </div>
       </fieldset>
 
 

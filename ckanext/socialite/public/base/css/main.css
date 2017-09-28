@@ -7,3 +7,6 @@
 .socialbtn{
   margin: 10px;
 }
+.socialbtn img {
+	width: 64% !important;
+}

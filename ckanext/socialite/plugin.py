@@ -134,6 +134,7 @@ class SocialitePlugin(plugins.SingletonPlugin):
     def login(self):
 
     	params = toolkit.request.params
+    	print(params);
 
 	if 'id_token' in params:
 		# try:

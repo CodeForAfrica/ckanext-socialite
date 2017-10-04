@@ -20,7 +20,7 @@
     }
     // Handle an error response from the API call
     function onError(error) {
-        console.log('hey');
+        console.log(error);
     }
     function liAuth(){
         IN.User.authorize(function(){
@@ -28,5 +28,5 @@
     }
     // Use the API call wrapper to request the member's basic profile data
     function getProfileData() {  
-      IN.API.Raw("/people/~:(email-address,first-name,last-Name,id)").result(onSuccess).error('didnotwork');
+      IN.API.Raw("/people/~:(email-address,first-name,last-Name,id)").result(onSuccess).error(onError);
     }

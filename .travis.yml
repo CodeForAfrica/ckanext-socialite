@@ -11,7 +11,7 @@ env:
 install:
 - pip install -r requirements.txt
 - pip install coveralls
-script: nosetests --with-coveralls
+script: nosetests --with-coverage
 after_success:
 - coveralls
 notifications:

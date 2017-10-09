@@ -51,16 +51,17 @@ function attachSignin(element) {
 	var access_token = response['access_token'];
 
 	$.ajax({
-  type: 'POST',
-  url: '/user/login',
-  data: {name: name, email: email, id_token: id_token, token: access_token},
-  success: function (res, status, xhr) {
-    window.location.replace('/dataset');
-  },
-  error: function(xhr, status, err) {
-    alert('Login failure: ' + err);
-  }
-});
+      type: 'POST',
+      url: '/user/login',
+      data: {name: name, email: email, id_token: id_token, token: access_token},
+      success: function (res, status, xhr) {
+        window.location.replace('/dataset');
+      },
+      error: function(xhr, status, err) {
+        alert('Login failure: ' + err);
+      }
+    });
+
       }, function(error) {
         console.log(console.error());
       });

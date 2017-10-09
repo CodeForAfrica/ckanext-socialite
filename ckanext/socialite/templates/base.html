@@ -23,6 +23,27 @@
 {% block scripts %}
     <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
     <script src="https://apis.google.com/js/platform.js"></script>
+    <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('g-signin-button', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script type="text/javascript" src="/base/js/googleauth.js"></script>
     <script>startApp();</script>
 

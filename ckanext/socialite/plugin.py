@@ -33,8 +33,10 @@ import requests
 import re
 
 
+
+
 # get 'ckan.googleauth_clientid' from ini file
-def get_google_clientid():
+def get_clientid():
     return config.get('ckan.googleauth_clientid', '')
 
 
@@ -70,6 +72,7 @@ class SocialitePlugin(plugins.SingletonPlugin):
 
         if user_ckan:
             user_dict = toolkit.get_action('user_show')(data_dict={'id': user_ckan.id})
+
             return user_dict
         else:
             return None
@@ -78,7 +81,6 @@ class SocialitePlugin(plugins.SingletonPlugin):
     def get_ckanpasswd(self):
         import datetime
         import random
-
         passwd = str(random.random()) + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")+str(uuid.uuid4().hex)
         passwd = re.sub(r"\s+", "", passwd, flags=re.UNICODE)
         return passwd
@@ -86,15 +88,14 @@ class SocialitePlugin(plugins.SingletonPlugin):
     def _logout_user(self):
         #import pylons
 
-	#to revoke the Google token uncomment the code below
-
-	#if 'ckanext_-accesstoken' in pylons.session:
-	#    atoken = pylons.session.get('ckanext_-accesstoken')
-	#    res = requests.get('https://accounts.google.com/o/oauth2/revoke?token='+atoken)
-	#    if res.status_code == 200:
-	#    	del pylons.session['ckanext_-accesstoken']
-	#    else:
-	#	raise GoogleAuthException('Token not revoked')
+        # to revoke the Google token uncomment the code below
+        #if 'ckanext_-accesstoken' in pylons.session:
+        #    atoken = pylons.session.get('ckanext_-accesstoken')
+        #    res = requests.get('https://accounts.google.com/o/oauth2/revoke?token='+atoken)
+        #    if res.status_code == 200:
+        #    	del pylons.session['ckanext_-accesstoken']
+        #    else:
+        #	raise GoogleAuthException('Token not revoked')
         if 'ckanext_-user' in pylons.session:
             del pylons.session['ckanext_-user']
         if 'ckanext_-email' in pylons.session:

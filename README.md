@@ -1,6 +1,8 @@
 # ckanext-socialite
-[![Build Status](https://travis-ci.org/CodeForAfricaLabs/ckanext-socialite.svg?branch=develop)](https://travis-ci.org/CodeForAfricaLabs/ckanext-socialite)
 _[EXPERIMENTAL] A CKAN extension to allow login using Google, Facebook or Github._
+
+[![Build Status](https://travis-ci.org/CodeForAfricaLabs/ckanext-socialite.svg?branch=develop)](https://travis-ci.org/CodeForAfricaLabs/ckanext-socialite)
+
 
 It was noted that the CKAN Data Portal needed the new user to create a new account from within the product.
 As a result, it was put forward that it should allow people to login using their social media accounts.

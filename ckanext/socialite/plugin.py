@@ -21,7 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.'''
 
 
-
 # coding=utf-8
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
@@ -34,13 +33,12 @@ import requests
 import re
 
 
-
 # get 'ckan.googleauth_clientid' from ini file
 def get_google_clientid():
     return config.get('ckan.googleauth_clientid', '')
 
 
-#get ckan.googleauth_hosted_domain from ini file
+# get ckan.googleauth_hosted_domain from ini file
 def get_hosted_domain():
     return config.get('ckan.googleauth_hosted_domain', '')
 
@@ -49,45 +47,41 @@ class GoogleAuthException(Exception):
     pass
 
 
-
 class SocialitePlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IAuthenticator)
     plugins.implements(plugins.ITemplateHelpers)
-
-
 
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'googleauth')
 
-
-    #declare new helper functions
+    # declare new helper functions
     def get_helpers(self):
         return {'googleauth_get_clientid': get_google_clientid,
                 'googleauth_get_hosted_domain': get_hosted_domain}
 
-    #if exist returns ckan user
+    # if exist returns ckan user
     def get_ckanuser(self, user):
-    	import ckan.model
+        import ckan.model
 
-	user_ckan = ckan.model.User.by_name(user)
+        user_ckan = ckan.model.User.by_name(user)
 
-	if user_ckan:
-		user_dict = toolkit.get_action('user_show')(data_dict={'id': user_ckan.id})
-		return user_dict
-	else:
-		return None
+        if user_ckan:
+            user_dict = toolkit.get_action('user_show')(data_dict={'id': user_ckan.id})
+            return user_dict
+        else:
+            return None
 
-    #generates a strong password
+    # generates a strong password
     def get_ckanpasswd(self):
-	import datetime
-	import random
+        import datetime
+        import random
 
-	passwd = str(random.random())+ datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")+str(uuid.uuid4().hex)
-	passwd = re.sub(r"\s+", "", passwd, flags=re.UNICODE)
-	return passwd
+        passwd = str(random.random()) + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")+str(uuid.uuid4().hex)
+        passwd = re.sub(r"\s+", "", passwd, flags=re.UNICODE)
+        return passwd
 
     def _logout_user(self):
         #import pylons
@@ -108,24 +102,21 @@ class SocialitePlugin(plugins.SingletonPlugin):
         pylons.session.save()
 
 
-
     #at every access the email address is checked. if it is authorized ckan username is created and access is given
     def login(self):
 
         params = toolkit.request.params
 
         if 'id_token' in params:
-
             user_account = params['email'].split('@')[0]
             if user_account.isalnum() is False:
                 user_account = ''.join(e for e in user_account if e.isalnum())
 
             user_ckan = self.get_ckanuser(user_account)
-
             if not user_ckan:
                 user_ckan = toolkit.get_action('user_create')(
                     context={'ignore_auth': True},
-                    data_dict={'email': mail_verified,
+                    data_dict={'email': params['email'],
                                'name': user_account,
                                'password': self.get_ckanpasswd()})
 
@@ -138,16 +129,12 @@ class SocialitePlugin(plugins.SingletonPlugin):
 
     #if someone is logged in will be set the parameter c.user
     def identify(self):
-	user_ckan = pylons.session.get('ckanext_-user')
+    	user_ckan = pylons.session.get('ckanext_-user')
         if user_ckan:
             toolkit.c.user = user_ckan
 
-
-
     def logout(self):
-	self._logout_user()
-
-
+        self._logout_user()
 
     def abort(self):
-	self._logout_user()
+        self._logout_user()

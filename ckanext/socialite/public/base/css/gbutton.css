@@ -1,4 +1,4 @@
-#g-signin-button {
+#g-signin-button{
  display: inline-block;
  background: #4285f4;
  color: white;
@@ -7,12 +7,45 @@
  white-space: nowrap;
 }
 
+#github-button {
+ display: inline-block;
+ background: black;
+ color: white;
+ width: 190px;
+ border-radius: 5px;
+ white-space: nowrap;
+}
+
+
 #g-signin-button:hover {
+ cursor: pointer;
+}
+
+#github-button:hover {
  cursor: pointer;
 }
 
 span.label {
  font-weight: bold;
+}
+
+
+span.google-icon {
+ background: url('/base/images/g7.png') transparent 50% no-repeat;
+ display: inline-block;
+ vertical-align: middle;
+ width: 42px;
+ height: 42px;
+ /*border-right: #2265d4 1px solid;*/
+}
+
+span.github-icon {
+ background: url('/base/images/Octocat.png') transparent 50% no-repeat;
+ display: inline-block;
+ vertical-align: middle;
+ width: 42px;
+ height: 42px;
+ /*border-right: #2265d4 1px solid;*/
 }
 
 span.button-text {

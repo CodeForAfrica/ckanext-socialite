@@ -1,3 +1,6 @@
+# Desktop Images
+.DS_Store
+
 .ropeproject
 node_modules
 bower_components
@@ -40,6 +43,3 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
-
-# Desktop image saves
-.DS_Store

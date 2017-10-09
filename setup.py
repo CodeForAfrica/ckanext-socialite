@@ -21,7 +21,7 @@ setup(
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/"andretalik"/ckanext-socialite',
+    url='https://github.com/CodeForAfricaLabs/ckanext-socialite',
 
     # Author details
     author='''"Adrian Otieno"''',

@@ -1,4 +1,4 @@
-#g-signin-button, #github-button {
+#g-signin-button{
  display: inline-block;
  background: #4285f4;
  color: white;
@@ -6,6 +6,16 @@
  border-radius: 5px;
  white-space: nowrap;
 }
+
+#github-button {
+ display: inline-block;
+ background: black;
+ color: white;
+ width: 190px;
+ border-radius: 5px;
+ white-space: nowrap;
+}
+
 
 #g-signin-button:hover {
  cursor: pointer;

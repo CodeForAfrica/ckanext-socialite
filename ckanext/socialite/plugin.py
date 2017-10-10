@@ -37,9 +37,8 @@ import logging
 
 
 # get 'ckan.googleauth_clientid' from ini file
-def get_clientid():
+def get_google_clientid():
     return config.get('ckan.googleauth_clientid', '')
-
 
 # get ckan.googleauth_hosted_domain from ini file
 def get_hosted_domain():
@@ -92,9 +91,9 @@ class SocialitePlugin(plugins.SingletonPlugin):
         #    atoken = pylons.session.get('ckanext_-accesstoken')
         #    res = requests.get('https://accounts.google.com/o/oauth2/revoke?token='+atoken)
         #    if res.status_code == 200:
-        #    	del pylons.session['ckanext_-accesstoken']
+        #       del pylons.session['ckanext_-accesstoken']
         #    else:
-        #	raise GoogleAuthException('Token not revoked')
+        #   raise GoogleAuthException('Token not revoked')
         if 'ckanext_-user' in pylons.session:
             del pylons.session['ckanext_-user']
         if 'ckanext_-email' in pylons.session:
@@ -111,26 +110,25 @@ class SocialitePlugin(plugins.SingletonPlugin):
             if user_account.isalnum() is False:
                 user_account = ''.join(e for e in user_account if e.isalnum())
 
-		user_ckan = self.get_ckanuser(user_account)
+            user_ckan = self.get_ckanuser(user_account)
 
-		full_name = params['name']
+            full_name = params['name']
         
+            if not user_ckan:
+                user_ckan = toolkit.get_action('user_create')(
+                                        context={'ignore_auth': True},
+                                        data_dict={'email': params['email'],
+                                            'name': user_account,
+                                            'fullname': full_name,
+                                            'password': self.get_ckanpasswd()})
 
-		if not user_ckan:
-			user_ckan = toolkit.get_action('user_create')(
-                    				context={'ignore_auth': True},
-                    				data_dict={'email': params['email'],
-                               			'name': user_account,
-                                        'fullname': full_name,
-                               			'password': self.get_ckanpasswd()})
-
-		pylons.session['ckanext_-user'] = user_ckan['name']
-        pylons.session['ckanext_-email'] = params['email']
-        pylons.session.save()
+            pylons.session['ckanext_-user'] = user_ckan['name']
+            pylons.session['ckanext_-email'] = params['email']
+            pylons.session.save()
 
     #if someone is logged in will be set the parameter c.user
     def identify(self):
-    	user_ckan = pylons.session.get('ckanext_-user')
+        user_ckan = pylons.session.get('ckanext_-user')
         if user_ckan:
             toolkit.c.user = user_ckan
 

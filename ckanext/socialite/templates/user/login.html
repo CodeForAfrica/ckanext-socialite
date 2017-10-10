@@ -3,37 +3,11 @@
 {% block primary_content %}
   <section class="module">
     <div class="module-content">
-	<h1 class="page-heading">
-		{% block page_heading %}
-			{{ _('Login') }}
-		{% endblock %}
-	</h1>
-      <fieldset>
-        <legend><h4>{{ _('Log in with Google/Github') }}</h4></legend>
-        <div class="socialbtn-container">
-          <div id="g-signin-button" class="socialbtn">
-            <span class="google-icon"></span>
-            <span class="button-text">Google</span>
-          </div>
-          <div id="github-button" onclick="login()">
-            <span class="github-icon"></span>
-            <span class="button-text">Github</span>
-          </div>
-          <div>
-            <div class="fb-login-button socialbtn" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" scope="public_profile,email" onlogin="checkLoginState();"></div>
-          </div>
-          <div class="socialbtn">
-            <div id="in-btn-wrap">
-              <a href="#" onclick="liAuth()" id="in-btn-link">
-                <img src="/base/images/in-signin-btn.png" id="in-btn">
-              </a>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    
-
-      <br><br>
+    	<h1 class="page-heading">
+    		{% block page_heading %}
+    			{{ _('Login') }}
+    		{% endblock %}
+    	</h1>
       <fieldset>
         <legend>
           {% set auth_text = _("Log in with your {site_title} account") %}
@@ -43,6 +17,18 @@
           {% snippet "user/snippets/login_form.html", action=c.login_handler, error_summary=error_summary %}
         {% endblock %}
       </fieldset>
+      <fieldset>
+        <legend><h4>{{ _('Log in with Social Media') }}</h4></legend>
+        <div class="social-container">
+          <a href="#" class="social-button" id="facebook-btn" onclick="checkLoginState()"> <span>Sign in with Facebook</span></a>
+          &nbsp;&nbsp;
+          <a class="google-btn social-button " id="g-signin-button"> <span>Sign in with Google</span></a>
+          <a href="#" class="github-btn social-button " id="github-button" onclick="login()"> <span>Sign in with Github</span></a>
+          &nbsp;&nbsp;
+          <a class="social-button" id="linkedin-btn" onclick="liAuth()"> <span>Sign in with LinkedIn</span></a>
+        </div>
+      </fieldset>
+      <br><br>  
     </div>
   </section>
 {% endblock %}

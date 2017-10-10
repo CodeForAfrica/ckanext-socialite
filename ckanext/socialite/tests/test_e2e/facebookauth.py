@@ -59,7 +59,7 @@ class FacebookTestCase(unittest.TestCase):
 			main_window_handle = driver.window_handles[0]
 			signin_window_handle = driver.window_handles[1]
 			driver.switch_to.window(signin_window_handle)
-			email_input = driver.find_element_by_id('email').send_keys('buzzdhani@hotmail.com')
+			email_input = driver.find_element_by_id('email').send_keys('d.abelega@cannonprojects.com')
 			password_input = driver.find_element_by_id('pass').send_keys('ckanext&socialite')
 			submit_button = WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.NAME, 'login')))
 			submit_button.submit()

@@ -1,4 +1,15 @@
 .socialbtn-container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.fi-container {
+	display: -webkit-flex;
+  display: flex;
+  width: 800px;
+}
+
+.gg-cotainer {
 	display: -webkit-flex;
   display: flex;
   width: 800px;
@@ -8,5 +19,188 @@
   margin: 10px;
 }
 .socialbtn img {
-	width: 64% !important;
+	width: 94%;
+}
+.social-button {
+	  background-position: 25px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+	  line-height: 50px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 48%;
+	  border-radius: 3px;
+    margin: 10px auto;
+    outline: rgb(255, 255, 255) none 0px;
+    padding-left: 10%;
+    transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#facebook-btn {
+    background: rgb(255, 255, 255) url('../images/facebook.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+    border: 1px solid rgb(60, 90, 154);
+}
+
+#facebook-btn:hover {
+	  border-color: rgb(60, 90, 154);
+	  background: rgb(60, 90, 154) url('../images/facebook-white.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+    text-decoration: unset;
+}
+
+#facebook-btn span {
+	  box-sizing: border-box;
+    color: rgb(60, 90, 154);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(255, 255, 255);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#facebook-btn:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.google-btn {
+    background: rgb(255, 255, 255) url('../images/google-plus.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+    border: 1px solid rgb(220, 74, 61);
+}
+
+.google-btn:hover {
+	  border-color: rgb(220, 74, 61);
+	  background: rgb(220, 74, 61) url('../images/google-plus-white.png') no-repeat scroll 5px 0px / 50px 50px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+    text-decoration: unset;
+}
+
+.google-btn span {
+	  box-sizing: border-box;
+    color: rgb(220, 74, 61);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(220, 74, 61);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.google-btn:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.github-btn {
+    background: rgb(255, 255, 255) url('../images/github.jpg') no-repeat scroll 5px 1px / 45px 45px padding-box border-box;
+    border: 1px solid rgb(0,0,0);
+}
+
+.github-btn:hover {
+	  border-color: rgb(0,0,0);
+	  background: rgb(0,0,0) url('../images/github-white.png') no-repeat scroll 5px 1px / 45px 45px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+    text-decoration: unset;
+}
+
+.github-btn span {
+	  box-sizing: border-box;
+    color: rgb(0,0,0);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(220, 74, 61);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.github-btn:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#linkedin-btn {
+    background: rgb(255, 255, 255) url('../images/linkedin.svg') no-repeat scroll 13px 0px / 28px 45px padding-box border-box;
+    border: 1px solid rgb(0, 119, 181);
+}
+
+#linkedin-btn:hover {
+	  border-color: rgb(0, 119, 181);
+	  background: rgb(0, 119, 181) url('../images/linkedin-white.svg') no-repeat scroll 13px 0px / 28px 45px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+    text-decoration: unset;
+}
+
+#linkedin-btn span {
+	  box-sizing: border-box;
+    color: rgb(0, 119, 181);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(0, 119, 181);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#linkedin-btn:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
 }

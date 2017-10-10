@@ -43,7 +43,7 @@ sudo service apache2 restart
 * Then correctly configure the extension through the instructions outlined below.
 
   The Configurations that have been marked as `OPTIONAL` do not need to be setup, rather those instructions outline how to configure the Authentication process with your own setups.
-  
+
 ---
 
 
@@ -82,6 +82,8 @@ From the Sign-In methods tab, activate Github Login and copy the Client ID and S
 <img width="1280" alt="screenshot ckan" src="https://user-images.githubusercontent.com/25458764/31397863-c827a8c2-adef-11e7-8a0c-90ebb432a934.png">
 
 <img width="1280" alt="screenshot firebase" src="https://user-images.githubusercontent.com/25458764/31398089-7216c778-adf0-11e7-9e35-99ed1d2b3a44.png">
+
+For more information concerning the Github Configuration, visit https://firebase.google.com/docs/auth/web/github-auth
 
 * That's all!
 

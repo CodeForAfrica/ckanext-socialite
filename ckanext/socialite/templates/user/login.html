@@ -19,11 +19,11 @@
       </fieldset>
       <fieldset>
         <legend><h4>{{ _('Log in with Social Media') }}</h4></legend>
-        <div class="social-container">
-          <a href="#" class="social-button" id="facebook-btn" onclick="checkLoginState()"> <span>Sign in with Facebook</span></a>
+        <div class="login-box">
+          <a href="#" class="social-button" id="facebook-btn" onclick="fb_login();"> <span>Sign in with Facebook</span></a>
           &nbsp;&nbsp;
           <a class="google-btn social-button " id="g-signin-button"> <span>Sign in with Google</span></a>
-          <a href="#" class="github-btn social-button " id="github-button" onclick="login()"> <span>Sign in with Github</span></a>
+          <a class="github-btn social-button " id="github-button" onclick="login()"> <span>Sign in with Github</span></a>
           &nbsp;&nbsp;
           <a class="social-button" id="linkedin-btn" onclick="liAuth()"> <span>Sign in with LinkedIn</span></a>
         </div>

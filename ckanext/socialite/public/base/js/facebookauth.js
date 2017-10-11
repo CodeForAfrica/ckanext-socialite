@@ -9,7 +9,7 @@
     FB.AppEvents.logPageView();   
 
       FB.getLoginStatus(function(response) {
-          console.log(response, 'R1');
+          console.log(response);
       });
   };
 
@@ -21,12 +21,9 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-  // Check if user is logged into facebook and log user into the app.
-  function checkLoginState() {
-    var accessToken;
-    var idToken;
-    FB.getLoginStatus(function(response) {
-      if(response.status === 'connected'){
+  function fb_login() {
+    FB.login(function(response) {
+      if (response.status === 'connected') {
         accessToken = response.authResponse.accessToken;
         idToken = response.authResponse.userID;
         FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email'},
@@ -51,3 +48,4 @@
       }
     });
   }
+  

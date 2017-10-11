@@ -18,17 +18,15 @@ class LinkedInTestCase(unittest.TestCase):
 	def testButtonRender(self):
 		driver = self.browser
 		driver.get('http://localhost:5000/user/login')
-		button_link = driver.find_element_by_xpath(u'//a[@id="in-btn-link"]')
-		button_text = driver.find_element_by_xpath(u'//img[@id="in-btn"]')
-		btn_assert = driver.find_element_by_xpath(u'//a[@id="in-btn-link"]/following::img')
-		assert btn_assert
+		button_link = driver.find_element_by_xpath(u'//a[@id="linkedin-btn"]')
+		assert button_link
 
 	def testPopUpWindow(self):
 		driver = self.browser
 		driver.get('http://localhost:5000/user/login')
 		main_window_title = driver.title
 		main_window_handle = driver.window_handles[0]
-		driver.find_element_by_id('in-btn-link').click()
+		driver.find_element_by_id('linkedin-btn').click()
 		signin_window_handle = driver.window_handles[1]
 		driver.switch_to.window(signin_window_handle)
 		try:
@@ -42,7 +40,7 @@ class LinkedInTestCase(unittest.TestCase):
 		driver = self.browser
 		driver.implicitly_wait(10)
 		driver.get('http://localhost:5000/user/login')
-		driver.find_element_by_id('in-btn-link').click()
+		driver.find_element_by_id('linkedin-btn').click()
 		signin_window_handle = driver.window_handles[1]
 		driver.switch_to.window(signin_window_handle)
 
@@ -56,7 +54,7 @@ class LinkedInTestCase(unittest.TestCase):
 		driver.implicitly_wait(50)
 		driver.get('http://localhost:5000/user/login')
 
-		driver.find_element_by_id('in-btn-link').click()
+		driver.find_element_by_id('linkedin-btn').click()
 		main_window_handle = driver.window_handles[0]
 		signin_window_handle = driver.window_handles[1]
 		driver.switch_to.window(signin_window_handle)

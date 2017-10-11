@@ -1,26 +1,3 @@
-.socialbtn-container {
-	width: 90%;
-	margin: 0 auto;
-}
-
-.fi-container {
-	display: -webkit-flex;
-  display: flex;
-  width: 800px;
-}
-
-.gg-cotainer {
-	display: -webkit-flex;
-  display: flex;
-  width: 800px;
-}
-
-.socialbtn{
-  margin: 10px;
-}
-.socialbtn img {
-	width: 94%;
-}
 .social-button {
 	  background-position: 25px 0px;
     box-sizing: border-box;

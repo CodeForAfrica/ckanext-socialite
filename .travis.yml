@@ -17,7 +17,7 @@ before_install:
 install:
 - pip install -r requirements.txt
 - pip install coveralls
-script: ckanext/socialite/tests/test_e2e/test_socialite.py
+script: chmod a+x ckanext/socialite/tests/test_e2e/test_socialite.py
 after_success:
 - coveralls
 notifications:

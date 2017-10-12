@@ -12,22 +12,6 @@ That is what this extension aims to achieve. It allows a new user to sign in usi
 
 This extension adds the relevant social media buttons to the login page allowing the user to login using them.
 
-It was noted that the CKAN Data Portal needed the new user to create a new account from within the product.
-As a result, it was put forward that it should allow people to login using their social media accounts.
-That is what this extension aims to achieve. It allows a new user to sign in using Google, Facebook, LinkedIn and Github.
-
-## How It Works
-
-This extension adds the relevant social media buttons to the login page allowing the user to login using them.
-
-## Configuration
-
-To use this extension with your own instance of Google Firebase,
-
-```
-
-```
-
 ## How to Install
 
 Installing this extension in your CKAN instance is as easy as installing any other CKAN extension.

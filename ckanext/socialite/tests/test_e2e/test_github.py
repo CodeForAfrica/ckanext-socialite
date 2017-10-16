@@ -47,4 +47,4 @@ class TestGithubAuth(unittest.TestCase):
         time.sleep(10)
         url_now = self.driver.current_url
         print(url_now)
-        self.assertEqual('http://localhost:5000/dataset', url_now)
+        self.assertEqual('http://localhost:5000/datasets', url_now)

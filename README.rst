@@ -2,11 +2,11 @@
    these badges work. The necessary Travis and Coverage config files have been
    generated for you.
 
-.. image:: https://travis-ci.org/"andretalik"/ckanext-socialite.svg?branch=master
-    :target: https://travis-ci.org/"andretalik"/ckanext-socialite
+.. image:: https://travis-ci.org/CodeForAfricaLabs/ckanext-socialite.svg?branch=develop
+    :target: https://travis-ci.org/CodeForAfricaLabs/ckanext-socialite
 
-.. image:: https://coveralls.io/repos/"andretalik"/ckanext-socialite/badge.svg
-  :target: https://coveralls.io/r/"andretalik"/ckanext-socialite
+.. image:: https://coveralls.io/repos/CodeForAfricaLabs/ckanext-socialite/badge.svg
+  :target: https://coveralls.io/r/CodeForAfricaLabs/ckanext-socialite
 
 .. image:: https://pypip.in/download/ckanext-socialite/badge.svg
     :target: https://pypi.python.org/pypi//ckanext-socialite/
@@ -32,18 +32,17 @@
 ckanext-socialite
 =============
 
-.. Put a description of your extension here:
-   What does it do? What features does it have?
-   Consider including some screenshots or embedding a video!
+.. This extension allows a user to login to CKAN using their available social media accounts,
+  that include Google, Github, LinkedIn and Facebook.
+  <img width="1280" alt="screenshot ckan" src="https://user-images.githubusercontent.com/25458764/31724768-4d870d82-b42b-11e7-9859-08b310474bdd.png">
 
 
 ------------
 Requirements
 ------------
 
-For example, you might want to mention here which versions of CKAN this
-extension works with.
-
+This extension works perfectly with ckan v.2.6.3 to the v.2.7.0.
+It is untested with v.2.8.0 going forward.
 
 ------------
 Installation
@@ -67,7 +66,12 @@ To install ckanext-socialite:
    config file (by default the config file is located at
    ``/etc/ckan/default/production.ini``).
 
-4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
+4. Modify your configuration file (generally in `/etc/ckan/default/production.ini`) and add `socialite` in the `ckan.plugins` property.
+    ``
+    ckan.plugins = <OTHER_PLUGINS> socialite
+    ``
+
+5. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
 
      sudo service apache2 reload
 
@@ -76,11 +80,58 @@ To install ckanext-socialite:
 Config Settings
 ---------------
 
-Document any optional config settings here. For example::
 
-    # The minimum number of hours to wait before re-checking a resource
-    # (optional, default: 24).
-    ckanext.socialite.some_setting = some_default_value
+## Google Configuration
+
+  In your config file (/etc/ckan/default/production.ini) add these properties:
+
+  ```
+  ckan.googleauth_clientid = client_id_value (REQUIRED). It contains the Client ID. For more information on how to create Client ID please visit https://developers.google.com/identity/sign-in/web/devconsole-project.
+  ```
+  ```
+  ckan.googleauth_hosted_domain = hosted_domain_value (OPTIONAL) It contains the domain authorized to authenticate. If it isn't set you will have access with any Google Account Credentials.
+  ```
+
+## Github Configuration(OPTIONAL)
+
+  To use this extension with your own instance of Google Firebase
+  Create a new Firebase project that you will use to host the login functionality of the extension.(https://console.firebase.google.com)
+
+  In the project setup, there shall be the config dictionary that you replace in the `ckanext/socialite/public/js/googleauth.js` file.
+
+  ```
+  var config = {
+    apiKey: 'apiKey',
+    authDomain: 'authDomain',
+    databaseURL: 'databaseURL',
+    projectId: 'projectId',
+    storageBucket: '',
+    messagingSenderId: 'messagingSenderId'
+  }
+  ```
+  On the Firebase console you then navigate to the Authentication tab and activate Github Authentication.
+
+  From the Sign-In methods tab, activate Github Login and copy the Client ID and Secret from Github and paste them into the required fields as shown in the screenshot.
+
+  <img width="1280" alt="screenshot ckan" src="https://user-images.githubusercontent.com/25458764/31397863-c827a8c2-adef-11e7-8a0c-90ebb432a934.png">
+
+  <img width="1280" alt="screenshot firebase" src="https://user-images.githubusercontent.com/25458764/31398089-7216c778-adf0-11e7-9e35-99ed1d2b3a44.png">
+
+  * That's all!
+
+## Facebook Configuration(OPTIONAL)
+  *  Create your app on https://developers.facebook.com
+
+  *  Retrieve your app's API key from your dashboard.
+
+  *  In `ckanext/socialite/public/js/facebook.js`, set the value of `appId` to equal the APIKEY in step two. `appId` is located in the initialization function called `fbAsyncInit`.
+
+## LinkedIn Configuration(OPTIONAL)
+  *  Create your app on https://developers.linkedin.com
+
+  *  Retrieve your app's API key from your dashboard.
+
+  *  In `ckanext/socialite/base.html`, set the value of api_key to equal the APIKEY retrieved in step two.
 
 
 ------------------------

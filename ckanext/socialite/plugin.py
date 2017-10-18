@@ -105,28 +105,26 @@ class SocialitePlugin(plugins.SingletonPlugin):
     def login(self):
 
         params = toolkit.request.params
-        print(params, 'the params')
         if 'id_token' in params:
             user_account = params['email'].split('@')[0]
-            print(user_account, 'the user_account')
+            full_name = params['name']
+            user_email = params['email']
             if user_account.isalnum() is False:
                 user_account = ''.join(e for e in user_account if e.isalnum())
 
             user_ckan = self.get_ckanuser(user_account)
-            print(user_ckan, 'the user_ckan')
-
-            full_name = params['name']
-        
+            
             if not user_ckan:
+                print(params['email'], 'the after email')
                 user_ckan = toolkit.get_action('user_create')(
                                         context={'ignore_auth': True},
-                                        data_dict={'email': params['email'],
+                                        data_dict={'email': user_email,
                                             'name': user_account,
                                             'fullname': full_name,
                                             'password': self.get_ckanpasswd()})
 
             pylons.session['ckanext_-user'] = user_ckan['name']
-            pylons.session['ckanext_-email'] = params['email']
+            pylons.session['ckanext_-email'] = user_email
             pylons.session.save()
 
     #if someone is logged in will be set the parameter c.user

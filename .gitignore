@@ -1,6 +1,9 @@
 # Desktop Images
 .DS_Store
 
+#  Search engine files
+solr/
+
 .ropeproject
 node_modules
 bower_components
@@ -32,6 +35,9 @@ sdist/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+
+# Selenium Logs
+*.log
 
 # Unit test / coverage reports
 htmlcov/

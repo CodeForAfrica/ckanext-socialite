@@ -24,8 +24,7 @@ class TestGithubAuth(unittest.TestCase):
         self.driver.quit()
 
     def test_githubauth(self):
-        """This function tests if the Authentication Process works correctly with the Project.
-        """
+        """This function tests if the Authentication Process works correctly with the Project."""
         ckan_window = self.driver.window_handles[0]
         github_signin = self.driver.find_element_by_id("github-button")
         github_signin.click()

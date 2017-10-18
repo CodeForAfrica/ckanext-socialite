@@ -29,6 +29,7 @@
         FB.api('/me', {locale: 'en_US', fields: 'id,first_name,last_name,email'},
           function (response) {
             console.log(response);
+            console.log(response.email);
             var fullName = response.first_name + ' ' + response.last_name;
             var email = response.email;
             $.ajax({
@@ -46,6 +47,6 @@
       } else {
         window.location.replace("/user/login");
       }
-    });
+    }, {scope:'email,public_profile'});
   }
   

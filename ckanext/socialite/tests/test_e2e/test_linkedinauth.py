@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-class LinkedInTestCase(unittest.TestCase):
+class TestLinkedInAuth(unittest.TestCase):
 	def setUp(self):
 		self.browser = webdriver.Firefox()
 		self.addCleanup(self.browser.quit)
@@ -72,4 +72,3 @@ class LinkedInTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
-

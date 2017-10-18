@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from custom_wait import element_has_css_class
 
-class FacebookTestCase(unittest.TestCase):
+class TestFacebookAuth(unittest.TestCase):
 	def setUp(self):
 		self.browser = webdriver.Firefox()
 		self.addCleanup(self.browser.quit)
@@ -30,12 +30,12 @@ class FacebookTestCase(unittest.TestCase):
 		driver.find_element_by_id('facebook-btn').click()
 		signin_window_handle = driver.window_handles[1]
 		driver.switch_to.window(signin_window_handle)
-		
+
 		content_wrapper = driver.find_element_by_id('content')
 		content_wrapper_text = content_wrapper.text
 		expected_content_text = 'Log in to use your Facebook account with Ckanext-socialite.'
 		self.assertIn(expected_content_text,content_wrapper_text)
-		
+
 
 	def testSuccessfulLogin(self):
 		driver = self.browser
@@ -60,4 +60,3 @@ class FacebookTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
-

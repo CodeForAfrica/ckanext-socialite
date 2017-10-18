@@ -14,11 +14,13 @@ class SocialitePluginTest(unittest.TestCase):
         plugin.toolkit = self._toolkit
         
     def test_update_config(self):
+        """Tests that CKAN uses the plugin's custom templates"""
         config = MagicMock()
         self.socialite_instance.update_config(config)
         plugin.toolkit.add_template_directory.assert_called_once_with(config, 'templates')
 
     def test_login(self):
+        """Tests for successful login"""
         params = ([('name', 'Shani Agent'), ('email', 'buzzdhani@hotmail.com'), ('id_token', 'sPDwypON4z')])
         user_account = params[1][1].split('@')[0]
 

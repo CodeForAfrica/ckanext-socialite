@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 
 
 class TestGithubAuth(unittest.TestCase):
-    """This class describes the tests for the Authentication."""
+    """This class describes the tests for the Github Authentication."""
 
     def setUp(self):
         """This prepares the test environment.

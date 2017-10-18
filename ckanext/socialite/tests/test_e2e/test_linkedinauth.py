@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
+
 class TestLinkedInAuth(unittest.TestCase):
 	"""This class describes the tests for the LinkedIN Authentication."""
 	def setUp(self):
@@ -41,7 +42,7 @@ class TestLinkedInAuth(unittest.TestCase):
 		try:
 			WebDriverWait(driver, 10).until(EC.title_contains("Authorize | LinkedIn"))
 			signin_window_title = driver.title
-			self.assertNotEqual(main_window_title,signin_window_title)
+			self.assertNotEqual(main_window_title, signin_window_title)
 		finally:
 			driver.quit()
 
@@ -60,7 +61,7 @@ class TestLinkedInAuth(unittest.TestCase):
 		note_wrapper = driver.find_element_by_class_name('note')
 		note_wrapper_text = note_wrapper.text
 		expected_note_text = 'ckanext-socialite would like to access some of your LinkedIn info:'
-		self.assertEqual(note_wrapper_text,expected_note_text)
+		self.assertEqual(note_wrapper_text, expected_note_text)
 
 	def testSuccessfulLogin(self):
 		"""Tests that user is redirected to DataSets page on successful login"""
@@ -90,4 +91,4 @@ class TestLinkedInAuth(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+	unittest.main(verbosity=2)

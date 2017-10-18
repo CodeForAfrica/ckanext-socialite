@@ -153,10 +153,14 @@ Running the Tests
 
 To run the tests, do::
 
+    python -m pytest ckanext/socialite/tests/test_e2e
+
     nosetests --nologcapture --with-pylons=test.ini
 
 To run the tests and produce a coverage report, first make sure you have
 coverage installed in your virtualenv (``pip install coverage``) then run::
+
+    python -m pytest ckanext/socialite/tests/test_e2e --with-coverage
 
     nosetests --nologcapture --with-pylons=test.ini --with-coverage --cover-package=ckanext.socialite --cover-inclusive --cover-erase --cover-tests
 

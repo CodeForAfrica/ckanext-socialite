@@ -1,6 +1,9 @@
 # Desktop Images
 .DS_Store
 
+#  Search engine files
+solr/
+
 .ropeproject
 node_modules
 bower_components

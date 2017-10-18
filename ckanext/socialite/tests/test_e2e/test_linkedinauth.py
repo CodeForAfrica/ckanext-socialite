@@ -8,8 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 class TestLinkedInAuth(unittest.TestCase):
 	"""This class describes the tests for the LinkedIN Authentication."""
 	def setUp(self):
-		 """This prepares the test environment.
-     """
+		"""This prepares the test environment."""
 		self.browser = webdriver.Firefox()
 		self.addCleanup(self.browser.quit)
 

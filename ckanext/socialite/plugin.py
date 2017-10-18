@@ -105,12 +105,15 @@ class SocialitePlugin(plugins.SingletonPlugin):
     def login(self):
 
         params = toolkit.request.params
+        print(params, 'the params')
         if 'id_token' in params:
             user_account = params['email'].split('@')[0]
+            print(user_account, 'the user_account')
             if user_account.isalnum() is False:
                 user_account = ''.join(e for e in user_account if e.isalnum())
 
             user_ckan = self.get_ckanuser(user_account)
+            print(user_ckan, 'the user_ckan')
 
             full_name = params['name']
         

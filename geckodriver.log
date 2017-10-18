@@ -10012,3 +10012,308 @@ JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T1
 [GFX1]: [Tiling:Client] Failed to allocate a TextureClient
 [GFX1]: [Tiling:Client] Failed to allocate a TextureClient
 [Child 13524] WARNING: pipe error: Broken pipe: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+1508328243701	geckodriver	INFO	geckodriver 0.19.0
+1508328243709	geckodriver	INFO	Listening on 127.0.0.1:62611
+1508328244789	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.jnbk0Q209mu1"
+1508328245182	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328245542	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:04:06.783 plugin-container[2213:206700] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:04:06.786 plugin-container[2213:206700] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa103, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328247183	Marionette	INFO	Listening on port 62624
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328247204	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328247243	Marionette	DEBUG	loaded listener.js
+1508328247259	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328247563	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328247564	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328249575	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328250190	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328250196	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328250436	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=494497548.0441788&clearCache=1"
+1508328250437	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=494497548.0441788&clearCache=1"
+1508328250705	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f36a88bbaee58d4&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328250710	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f36a88bbaee58d4&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328250942	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f36a88bbaee58d4&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328250943	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f36a88bbaee58d4&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328252339	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328252574	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328253301	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328253321	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/user/login"
+1508328253893	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/user/login"
+1508328253894	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/user/login"
+1508328254276	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483653"
+1508328254279	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483655"
+1508328254281	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483657"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328254498	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328254617	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328254637	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328254649	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328254984	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=323397757.19932693"
+1508328254988	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=323397757.19932693"
+1508328255000	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f297e419fa9778a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328255006	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f297e419fa9778a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328255119	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f297e419fa9778a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328255127	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f297e419fa9778a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328255265	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328255427	Marionette	INFO	New connections will no longer be accepted
+1508328255743	geckodriver	INFO	geckodriver 0.19.0
+1508328255747	geckodriver	INFO	Listening on 127.0.0.1:62824
+1508328256794	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.wX5GhmSwAWjv"
+1508328257057	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328257410	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:04:18.690 plugin-container[2217:207337] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9f3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:04:18.693 plugin-container[2217:207337] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa203, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328259150	Marionette	INFO	Listening on port 62837
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328259210	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328259246	Marionette	DEBUG	loaded listener.js
+1508328259266	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328259426	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328259428	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1508328261246	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328261634	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328261643	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328261930	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=853918836.1862934&clearCache=1"
+1508328261931	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=853918836.1862934&clearCache=1"
+1508328262084	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2bea55f155c90a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328262087	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2bea55f155c90a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328262323	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2bea55f155c90a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328262324	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2bea55f155c90a&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328265114	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328265335	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328266195	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328266243	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1508328266480	geckodriver	INFO	geckodriver 0.19.0
+1508328266484	geckodriver	INFO	Listening on 127.0.0.1:63024
+1508328267538	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.gm8eTzWGZUGy"
+1508328267802	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328268197	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:04:29.670 plugin-container[2220:208701] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:04:29.671 plugin-container[2220:208701] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa203, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328269905	Marionette	INFO	Listening on port 63037
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328269954	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328269996	Marionette	DEBUG	loaded listener.js
+1508328270017	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328270181	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328270182	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328272067	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328272476	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328272492	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328272767	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=657878131.3957295&clearCache=1"
+1508328272771	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=657878131.3957295&clearCache=1"
+1508328272925	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2e96089c898d7c&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328272927	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2e96089c898d7c&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328273267	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2e96089c898d7c&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328273272	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2e96089c898d7c&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328275256	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328275490	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328276182	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328276628	Marionette	DEBUG	Received DOM event "hashchange" for "http://localhost:5000/user/login#"
+1508328276680	Marionette	DEBUG	loaded listener.js
+1508328277640	Marionette	INFO	New connections will no longer be accepted
+1508328277965	geckodriver	INFO	geckodriver 0.19.0
+1508328277973	geckodriver	INFO	Listening on 127.0.0.1:63234
+1508328279019	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.x37Y9SYiaD2x"
+1508328279276	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328279627	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:04:41.051 plugin-container[2224:209303] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:04:41.052 plugin-container[2224:209303] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa103, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328281266	Marionette	INFO	Listening on port 63247
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328281325	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328281362	Marionette	DEBUG	loaded listener.js
+1508328281387	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328281564	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328281564	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328283115	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328283604	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328283619	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328283904	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=872196081.5318187&clearCache=1"
+1508328283907	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=872196081.5318187&clearCache=1"
+1508328284063	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f41c834e598538&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328284065	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f41c834e598538&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328284388	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f41c834e598538&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328284389	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f41c834e598538&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328286849	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328287071	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328287818	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328288305	Marionette	DEBUG	Received DOM event "hashchange" for "http://localhost:5000/user/login#"
+1508328288360	Marionette	DEBUG	loaded listener.js
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328293246	Marionette	INFO	New connections will no longer be accepted
+[Child 2224] WARNING: pipe error: Broken pipe: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+1508328631870	geckodriver	INFO	geckodriver 0.19.0
+1508328631874	geckodriver	INFO	Listening on 127.0.0.1:64631
+1508328632918	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.w4diMZlNm9FV"
+1508328633167	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328633492	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:10:34.614 plugin-container[2243:212986] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:10:34.621 plugin-container[2243:212986] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa103, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328634980	Marionette	INFO	Listening on port 64644
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328635024	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328635065	Marionette	DEBUG	loaded listener.js
+1508328635083	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328635312	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328635313	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328637218	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328637732	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328637739	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328638154	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=511925200.97006565&clearCache=1"
+1508328638157	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=511925200.97006565&clearCache=1"
+1508328638176	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2f9c0edc0269&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328638177	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2f9c0edc0269&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328638399	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2f9c0edc0269&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328638402	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f2f9c0edc0269&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328640000	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328640222	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328640925	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328640956	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1508328641190	geckodriver	INFO	geckodriver 0.19.0
+1508328641195	geckodriver	INFO	Listening on 127.0.0.1:64823
+1508328642242	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.NatMUjQI2N1w"
+1508328642493	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328642819	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:10:44.049 plugin-container[2247:213715] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:10:44.053 plugin-container[2247:213715] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa103, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328644359	Marionette	INFO	Listening on port 64836
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328644429	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328644467	Marionette	DEBUG	loaded listener.js
+1508328644486	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328644730	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328644731	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328646193	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328646582	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328646590	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328646890	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=765582217.2702776&clearCache=1"
+1508328646894	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=765582217.2702776&clearCache=1"
+1508328646968	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1381347fefc572&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328646970	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1381347fefc572&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328647323	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1381347fefc572&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328647325	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1381347fefc572&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328649034	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328649236	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328650080	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328650116	Marionette	INFO	New connections will no longer be accepted
+1508328650344	geckodriver	INFO	geckodriver 0.19.0
+1508328650350	geckodriver	INFO	Listening on 127.0.0.1:65010
+1508328651394	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.mEelnPPMRday"
+1508328651636	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328651950	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:10:53.019 plugin-container[2251:214330] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:10:53.021 plugin-container[2251:214330] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa103, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328653384	Marionette	INFO	Listening on port 65027
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328653465	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328653504	Marionette	DEBUG	loaded listener.js
+1508328653523	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328653660	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328653660	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328655525	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328655869	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328655877	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328656217	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=1738651003.8313298&clearCache=1"
+1508328656219	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=1738651003.8313298&clearCache=1"
+1508328656273	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f3e4f55bca757dc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328656274	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f3e4f55bca757dc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328656507	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f3e4f55bca757dc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328656509	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f3e4f55bca757dc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328658379	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328658609	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328659407	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328660003	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1508328660039	Marionette	DEBUG	loaded listener.js
+1508328662851	Marionette	INFO	New connections will no longer be accepted
+1508328663087	geckodriver	INFO	geckodriver 0.19.0
+1508328663093	geckodriver	INFO	Listening on 127.0.0.1:65234
+1508328664144	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.HS39cN13kDlK"
+1508328664397	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328664717	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:11:05.993 plugin-container[2254:215329] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9a0b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:11:05.995 plugin-container[2254:215329] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa203, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328666173	Marionette	INFO	Listening on port 65247
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328666226	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328666261	Marionette	DEBUG	loaded listener.js
+1508328666279	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328666416	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328666416	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328668235	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328668613	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328668622	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328669003	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=fbd40e807b25bc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328669009	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=fbd40e807b25bc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328669162	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=1855601741.3287547&clearCache=1"
+1508328669163	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=1855601741.3287547&clearCache=1"
+1508328669280	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=fbd40e807b25bc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328669281	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=fbd40e807b25bc&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328671075	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328671330	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328672265	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328672823	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1508328672874	Marionette	DEBUG	loaded listener.js
+1508328674462	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 2254] WARNING: pipe error: Broken pipe: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+1508328674714	geckodriver	INFO	geckodriver 0.19.0
+1508328674720	geckodriver	INFO	Listening on 127.0.0.1:65458
+1508328675762	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/11/yvklrcsn5px3h8pn7x4wj8q00000gn/T/rust_mozprofile.tSs8yZhx6qHc"
+1508328676009	addons.xpi	WARN	Error parsing extensions state: [Exception... "Component returned failure code: 0x80520012 (NS_ERROR_FILE_NOT_FOUND) [amIAddonManagerStartup.readStartupData]"  nsresult: "0x80520012 (NS_ERROR_FILE_NOT_FOUND)"  location: "JS frame :: resource://gre/modules/addons/XPIProvider.jsm :: loadExtensionState :: line 1596"  data: no] Stack trace: loadExtensionState()@resource://gre/modules/addons/XPIProvider.jsm:1596 < getInstallState()@resource://gre/modules/addons/XPIProvider.jsm:1631 < checkForChanges()@resource://gre/modules/addons/XPIProvider.jsm:3152 < startup()@resource://gre/modules/addons/XPIProvider.jsm:2246 < callProvider()@resource://gre/modules/AddonManager.jsm:271 < _startProvider()@resource://gre/modules/AddonManager.jsm:741 < startup()@resource://gre/modules/AddonManager.jsm:908 < startup()@resource://gre/modules/AddonManager.jsm:3122 < observe()@jar:file:///Applications/Firefox.app/Contents/Resources/omni.ja!/components/addonManager.js:65
+1508328676334	Marionette	INFO	Enabled via --marionette
+2017-10-18 13:11:17.534 plugin-container[2257:215923] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9e3b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-10-18 13:11:17.535 plugin-container[2257:215923] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa103, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1508328677777	Marionette	INFO	Listening on port 65467
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1508328677848	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508328677883	Marionette	DEBUG	loaded listener.js
+1508328677905	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1508328678037	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1508328678037	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement
+1508328679857	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328680250	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328680259	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328680545	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=390968559.28868705&clearCache=1"
+1508328680550	Marionette	DEBUG	Received DOM event "pageshow" for "https://accounts.google.com/o/oauth2/iframe#origin=http%3A%2F%2Flocalhost%3A5000&rpcToken=390968559.28868705&clearCache=1"
+1508328680655	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1118da2f82be96&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328680657	Marionette	DEBUG	Received DOM event "pageshow" for "http://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1118da2f82be96&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328680936	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1118da2f82be96&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328680937	Marionette	DEBUG	Received DOM event "pageshow" for "https://staticxx.facebook.com/connect/xd_arbiter/r/hsBwMj6iLmk.js?version=42#channel=f1118da2f82be96&origin=http%3A%2F%2Flocalhost%3A5000"
+1508328682813	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/user/login"
+1508328683119	Marionette	DEBUG	Received observer notification "outer-window-destroyed" for "2147483662"
+1508328683686	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/user/login"
+1508328684241	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1508328684295	Marionette	DEBUG	loaded listener.js
+1508328690309	Marionette	INFO	New connections will no longer be accepted
+JavaScript warning: http://localhost:5000/fanstatic/vendor/:version:2017-09-18T18:21:22/moment-with-locales.js, line 1: unreachable code after return statement

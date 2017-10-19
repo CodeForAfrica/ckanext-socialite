@@ -103,7 +103,6 @@ class SocialitePlugin(plugins.SingletonPlugin):
 
     #at every access the email address is checked. if it is authorized ckan username is created and access is given
     def login(self):
-
         params = toolkit.request.params
         if 'id_token' in params:
             user_account = params['email'].split('@')[0]

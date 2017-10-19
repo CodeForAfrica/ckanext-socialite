@@ -66,12 +66,7 @@ To install ckanext-socialite:
    config file (by default the config file is located at
    ``/etc/ckan/default/production.ini``).
 
-4. Modify your configuration file (generally in `/etc/ckan/default/production.ini`) and add `socialite` in the `ckan.plugins` property.
-    ``
-    ckan.plugins = <OTHER_PLUGINS> socialite
-    ``
-
-5. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
+4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
 
      sudo service apache2 reload
 

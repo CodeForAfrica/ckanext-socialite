@@ -9,7 +9,7 @@ cffi==1.10.0
 -e git+https://github.com/andela/ckan.git@142a81543b052583fc2c9800aef2ef2705d9b9d9#egg=ckan
 -e git+https://github.com/CodeForAfrica/ckanext-openafrica.git@442db78f79da61a72a136606d9e9ef4412384163#egg=ckanext_openafrica
 -e git+https://github.com/ckan/ckanext-repo.git@53a61097f6103f76583296b12c0858a8f5f2ca3e#egg=ckanext_repo
--e git+https://github.com/CodeForAfricaLabs/ckanext-socialite.git@685d51281af77fc11a133dfb78293c4a283b733b#egg=ckanext_socialite
+-e git+https://github.com/CodeForAfricaLabs/ckanext-socialite.git@ef5595db332552da713875ce171e046da2fa084a#egg=ckanext_socialite
 click==6.6
 coverage==4.4.1
 coveralls==1.2.0
@@ -27,7 +27,6 @@ Flask==0.11.1
 Flask-DebugToolbar==0.10.0
 FormEncode==1.3.0
 funcsigs==1.0.2
-GitHub-Flask==3.1.7
 html5lib==0.9999999
 httpretty==0.8.3
 idna==2.6
@@ -52,6 +51,7 @@ pbr==1.10.0
 pip-tools==1.7.0
 polib==1.0.7
 psycopg2==2.4.5
+py==1.4.34
 pycodestyle==2.2.0
 pycparser==2.18
 pyfakefs==2.9
@@ -59,6 +59,7 @@ Pygments==2.1.3
 Pylons==0.9.7
 pyOpenSSL==17.2.0
 pysolr==3.6.0
+pytest==3.2.3
 python-dateutil==1.5
 python-magic==0.4.12
 python-mimeparse==1.6.0

@@ -1,4 +1,4 @@
-'''MIT License
+"""MIT License.
 
 Copyright (c) 2017 Code for Africa - LABS
 
@@ -18,7 +18,8 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.'''
+SOFTWARE.
+"""
 
 
 # coding=utf-8
@@ -34,38 +35,44 @@ import re
 import logging
 
 
-
-
 # get 'ckan.googleauth_clientid' from ini file
 def get_google_clientid():
+    """Extract Client ID from config file."""
     return config.get('ckan.googleauth_clientid', '')
+
 
 # get ckan.googleauth_hosted_domain from ini file
 def get_hosted_domain():
+    """Extract Hosted Domain from config file."""
     return config.get('ckan.googleauth_hosted_domain', '')
 
 
 class AuthException(Exception):
+    """Exception to be raised for errors."""
+
     pass
 
 
 class SocialitePlugin(plugins.SingletonPlugin):
+    """Set up plugin for CKAN integration."""
+
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IAuthenticator)
     plugins.implements(plugins.ITemplateHelpers)
 
     def update_config(self, config_):
+        """Add resources used by the plugin into core config file."""
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'googleauth')
 
-    # declare new helper functions
     def get_helpers(self):
+        """Declare new helper functions."""
         return {'googleauth_get_clientid': get_google_clientid,
                 'googleauth_get_hosted_domain': get_hosted_domain}
 
-    # if exist returns ckan user
     def get_ckanuser(self, user):
+        """Return CKAN user if it already exists."""
         import ckan.model
 
         user_ckan = ckan.model.User.by_name(user)
@@ -76,8 +83,8 @@ class SocialitePlugin(plugins.SingletonPlugin):
         else:
             return None
 
-    # generates a strong password
     def get_ckanpasswd(self):
+        """Generate strong password for CKAN user."""
         import datetime
         import random
         passwd = str(random.random()) + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")+str(uuid.uuid4().hex)
@@ -85,9 +92,10 @@ class SocialitePlugin(plugins.SingletonPlugin):
         return passwd
 
     def _logout_user(self):
-        #import pylons
+        """Log out the currently logged in CKAN user."""
+        # import pylons
         # to revoke the Google token uncomment the code below
-        #if 'ckanext_-accesstoken' in pylons.session:
+        # if 'ckanext_-accesstoken' in pylons.session:
         #    atoken = pylons.session.get('ckanext_-accesstoken')
         #    res = requests.get('https://accounts.google.com/o/oauth2/revoke?token='+atoken)
         #    if res.status_code == 200:
@@ -100,9 +108,10 @@ class SocialitePlugin(plugins.SingletonPlugin):
             del pylons.session['ckanext_-email']
         pylons.session.save()
 
-
-    #at every access the email address is checked. if it is authorized ckan username is created and access is given
     def login(self):
+        """Login the user with credentials from the SocialAuth used. The CKAN
+        username is created and access given.
+        """
         params = toolkit.request.params
         if 'id_token' in params:
             user_account = params['email'].split('@')[0]
@@ -112,28 +121,31 @@ class SocialitePlugin(plugins.SingletonPlugin):
                 user_account = ''.join(e for e in user_account if e.isalnum())
 
             user_ckan = self.get_ckanuser(user_account)
-            
+
             if not user_ckan:
                 print(params['email'], 'the after email')
                 user_ckan = toolkit.get_action('user_create')(
                                         context={'ignore_auth': True},
                                         data_dict={'email': user_email,
-                                            'name': user_account,
-                                            'fullname': full_name,
-                                            'password': self.get_ckanpasswd()})
+                                                   'name': user_account,
+                                                   'fullname': full_name,
+                                                   'password': self.get_ckanpasswd()})
 
             pylons.session['ckanext_-user'] = user_ckan['name']
             pylons.session['ckanext_-email'] = user_email
             pylons.session.save()
 
-    #if someone is logged in will be set the parameter c.user
+    # if someone is logged in will be set the parameter c.user
     def identify(self):
+        """Logged in CKAN user will be set as c.user parameter."""
         user_ckan = pylons.session.get('ckanext_-user')
         if user_ckan:
             toolkit.c.user = user_ckan
 
     def logout(self):
+        """Call _logout_user()."""
         self._logout_user()
 
     def abort(self):
+        """In case of any errors, calls _logout_user()."""
         self._logout_user()

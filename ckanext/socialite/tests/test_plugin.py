@@ -22,8 +22,7 @@ class Session(object):
         pass
 
 
-class SocialitePluginTest(unittest.TestCase):
-    
+class TestSocialitePlugin(unittest.TestCase):
     def setUp(self):
         # Create instances
         self.socialite_instance = plugin.SocialitePlugin()
@@ -32,7 +31,7 @@ class SocialitePluginTest(unittest.TestCase):
         pass
 
     def test_update_config(self):
-        """Tests that CKAN uses the plugin's custom templates"""
+        """Test that CKAN uses the plugin's custom templates."""
         self._toolkit = plugin.toolkit
         plugin.toolkit = MagicMock()
         config = MagicMock()
@@ -70,5 +69,10 @@ class SocialitePluginTest(unittest.TestCase):
         self.assertEqual(plugin.toolkit.get_action()(), ckan_user)
         plugin.toolkit = self._toolkit
    
+    def test_passwdcreation(self):
+        """Test the CKAN password is created."""
+        ckan_passwd = self.socialite_instance.get_ckanpasswd()
+        self.assertIsNotNone(ckan_passwd)
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

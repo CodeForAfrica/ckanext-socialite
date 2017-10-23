@@ -37,13 +37,13 @@ import logging
 
 # get 'ckan.googleauth_clientid' from ini file
 def get_google_clientid():
-    """Extract Client ID from config file."""
+    """Extract Client ID from config(.ini) file."""
     return config.get('ckan.googleauth_clientid', '')
 
 
 # get ckan.googleauth_hosted_domain from ini file
 def get_hosted_domain():
-    """Extract Hosted Domain from config file."""
+    """Extract Hosted Domain from config(.ini) file."""
     return config.get('ckan.googleauth_hosted_domain', '')
 
 
@@ -73,13 +73,11 @@ class SocialitePlugin(plugins.SingletonPlugin):
 
     def get_ckanuser(self, user):
         """Return CKAN user if it already exists."""
-        #import pdb; pdb.set_trace()
         import ckan.model
 
         user_ckan = ckan.model.User.by_name(user)
 
         if user_ckan:
-            #import pdb; pdb.set_trace()
             user_dict = toolkit.get_action('user_show')(data_dict={'id': user_ckan.id})
             return user_dict
         else:
@@ -104,10 +102,10 @@ class SocialitePlugin(plugins.SingletonPlugin):
         #       del pylons.session['ckanext_-accesstoken']
         #    else:
         #   raise GoogleAuthException('Token not revoked')
-        if 'ckanext_-user' in pylons.session:
-            del pylons.session['ckanext_-user']
-        if 'ckanext_-email' in pylons.session:
-            del pylons.session['ckanext_-email']
+        if 'ckanext_user' in pylons.session:
+            del pylons.session['ckanext_user']
+        if 'ckanext_email' in pylons.session:
+            del pylons.session['ckanext_email']
         pylons.session.save()
 
     def login(self):
@@ -132,14 +130,14 @@ class SocialitePlugin(plugins.SingletonPlugin):
                                                    'fullname': full_name,
                                                    'password': self.get_ckanpasswd()})
 
-            pylons.session['ckanext_-user'] = user_ckan['name']
-            pylons.session['ckanext_-email'] = user_email
+            pylons.session['ckanext_user'] = user_ckan['name']
+            pylons.session['ckanext_email'] = user_email
             pylons.session.save()
 
     # if someone is logged in will be set the parameter c.user
     def identify(self):
         """Logged in CKAN user will be set as c.user parameter."""
-        user_ckan = pylons.session.get('ckanext_-user')
+        user_ckan = pylons.session.get('ckanext_user')
         if user_ckan:
             toolkit.c.user = user_ckan
 

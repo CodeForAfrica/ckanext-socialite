@@ -19,7 +19,7 @@ class Session(dict):
 
 class TestSocialitePlugin(unittest.TestCase):
     def setUp(self):
-        # Create instances
+        """Create instances."""
         self.socialite_instance = plugin.SocialitePlugin()
 
     def tearDown(self):
@@ -39,11 +39,10 @@ class TestSocialitePlugin(unittest.TestCase):
     @patch.object(plugin.SocialitePlugin, 'get_ckanuser')
     def test_login_when_user_exists(self, mock_get_ckanuser, mock_toolkit, mock_pylons):
         """Tests for successful login"""
-        mock_get_ckanuser.return_value = {'name': 'Shani Agent',}
+        mock_get_ckanuser.return_value = {'name': 'Shani Agent'}
         mock_pylons.session = Session()
         mock_toolkit.request.params = dict([('name', 'Shani Agent'), ('email', 'buzzdhani@hotmail.com'), ('id_token', 'sPDwypON4z')])
         user_ckan = self.socialite_instance.login()
-        
         self.assertEqual(mock_pylons.session['ckanext_-user'], 'Shani Agent')
         self.assertEqual(mock_pylons.session['ckanext_-email'], 'buzzdhani@hotmail.com')
 
@@ -66,6 +65,7 @@ class TestSocialitePlugin(unittest.TestCase):
         self.assertEqual(mock_pylons.session['ckanext_-email'], 'buzzdhani@hotmail.com')
 
     def get_mock_user(self):
+        """Generate mock user for use during tests."""
         User = collections.namedtuple('User', 'display_name name email_hash id')
         return User(
             u'Shani Agent', u'dabelega',

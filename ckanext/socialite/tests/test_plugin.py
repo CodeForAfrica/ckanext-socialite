@@ -8,16 +8,17 @@ from collections import defaultdict
 
 
 class Session(dict):
-    """Mocking the Pylons Session Object
-    """
+    """Mocking the Pylons Session Object."""
     def __init__(self):
-        self['ckanext_-user'] = 'buzzdhani'
-        self['ckanext_-email'] = 'buzzdhani@hotmail.com'
+        self['ckanext_user'] = 'buzzdhani'
+        self['ckanext_email'] = 'buzzdhani@hotmail.com'
 
     def save(self):
         pass
 
+
 class TestSocialitePlugin(unittest.TestCase):
+    """This class holds the TestCase instance through which all tests are done."""
     def setUp(self):
         """Create instances."""
         self.socialite_instance = plugin.SocialitePlugin()
@@ -43,8 +44,8 @@ class TestSocialitePlugin(unittest.TestCase):
         mock_pylons.session = Session()
         mock_toolkit.request.params = dict([('name', 'Shani Agent'), ('email', 'buzzdhani@hotmail.com'), ('id_token', 'sPDwypON4z')])
         user_ckan = self.socialite_instance.login()
-        self.assertEqual(mock_pylons.session['ckanext_-user'], 'Shani Agent')
-        self.assertEqual(mock_pylons.session['ckanext_-email'], 'buzzdhani@hotmail.com')
+        self.assertEqual(mock_pylons.session['ckanext_user'], 'Shani Agent')
+        self.assertEqual(mock_pylons.session['ckanext_email'], 'buzzdhani@hotmail.com')
 
     @patch('ckanext.socialite.plugin.pylons')
     @patch('ckanext.socialite.plugin.toolkit.get_action')
@@ -55,14 +56,17 @@ class TestSocialitePlugin(unittest.TestCase):
         mock_get_ckanuser.return_value = None
         mock_pylons.session = Session()
         mock_toolkit.request.params = dict([('name', 'Shani Agent'), ('email', 'buzzdhani@hotmail.com'), ('id_token', 'sPDwypON4z')])
-        user_dict = {'email':'buzzdhani@hotmail.com', 'name':'buzzdhani', 'full_name':'Shani Agent', 'password':'nfnfndndndh'}
+        user_dict = {'email': 'buzzdhani@hotmail.com',
+                     'name': 'buzzdhani',
+                     'full_name': 'Shani Agent',
+                     'password': 'nfnfndndndh'}
         mock_get_action.return_value = lambda context, data_dict: user_dict
         user_account = mock_toolkit.request.params['email'].split('@')[0]
         full_name = mock_toolkit.request.params['name']
         user_email = mock_toolkit.request.params['email']
         user_ckan = self.socialite_instance.login()
-        self.assertEqual(mock_pylons.session['ckanext_-user'], 'buzzdhani')
-        self.assertEqual(mock_pylons.session['ckanext_-email'], 'buzzdhani@hotmail.com')
+        self.assertEqual(mock_pylons.session['ckanext_user'], 'buzzdhani')
+        self.assertEqual(mock_pylons.session['ckanext_email'], 'buzzdhani@hotmail.com')
 
     def get_mock_user(self):
         """Generate mock user for use during tests."""
@@ -76,7 +80,10 @@ class TestSocialitePlugin(unittest.TestCase):
     @patch.object(ckan.model.User, 'by_name')
     @patch('ckanext.socialite.plugin.toolkit.get_action')
     def test_get_ckanuser(self, mock_get_action, mock_by_name):
-        user_dict = {'email':'buzzdhani@hotmail.com', 'name':'buzzdhani', 'full_name':'Shani Agent'}
+        """Test CKAN user is retrieved with correct credentials."""
+        user_dict = {'email': 'buzzdhani@hotmail.com',
+                     'name': 'buzzdhani',
+                     'full_name': 'Shani Agent'}
         mock_get_action.return_value = lambda data_dict: user_dict
 
         user_ckan = self.socialite_instance.get_ckanuser('nhggfdretee')
@@ -87,13 +94,13 @@ class TestSocialitePlugin(unittest.TestCase):
         ckan_passwd = self.socialite_instance.get_ckanpasswd()
         self.assertIsNotNone(ckan_passwd)
 
-    
     @patch('ckanext.socialite.plugin.pylons')
     def test_logout(self, mock_pylons):
+        """Test CKAN user is logged out."""
         mock_pylons.session = Session()
-         self.socialite_instance._logout_user()
-        self.assertEqual(mock_pylons.session.get('ckanext_-email'), None)
-        self.assertEqual(mock_pylons.session.get('ckanext_-user'), None)
+        self.socialite_instance._logout_user()
+        self.assertEqual(mock_pylons.session.get('ckanext_email'), None)
+        self.assertEqual(mock_pylons.session.get('ckanext_user'), None)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

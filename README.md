@@ -43,7 +43,7 @@ sudo service apache2 restart
 * Then correctly configure the extension through the instructions outlined below.
 
   The Configurations that have been marked as `OPTIONAL` do not need to be setup, rather those instructions outline how to configure the Authentication process with your own setups.
-  
+
 
 ## Google Configuration
 
@@ -96,6 +96,30 @@ From the Sign-In methods tab, activate Github Login and copy the Client ID and S
 *  Retrieve your app's API key from your dashboard.
 
 *  In `ckanext/socialite/base.html`, set the value of api_key to equal the APIKEY retrieved in step two.
+
+## Testing the Extension
+This extension has tests for the backend functionality that is under CI on Travis-CI: https://travis-ci.org/CodeForAfricaLabs/ckanext-socialite/
+
+### End-to-End Tests
+In order to run the E2E tests you must first of all download selenium's chromedriver from: https://sites.google.com/a/chromium.org/chromedriver/downloads
+Extract to preferrably within the virtualenv to avoid Permission issues.
+
+Then export the path to the chromedriver executable as an environment variable preferrably called "chromedriver_path"
+```
+export "chromedriver_path"=/usr/local/lib/ckan/default/bin/chromedriver
+```
+Afterwards run this code in your terminal once you are within the repo:
+```
+python -m pytest ckanext/socialite/tests/test_e2e/
+```
+
+
+### Plugin Backend Tests
+To run the backend tests, simply cd into the repo root then run:
+```
+python -m pytest ckanext/socialite/tests/test_plugin.py
+```
+
 
 ## License
 

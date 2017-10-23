@@ -145,19 +145,26 @@ do::
 -----------------
 Running the Tests
 -----------------
+End-to-End Tests::
 
-To run the tests, do::
+    In order to run the E2E tests you must first of all download selenium's chromedriver from: https://sites.google.com/a/chromium.org/chromedriver/downloads
+    Extract to preferrably within the virtualenv to avoid Permission issues.
 
-    python -m pytest ckanext/socialite/tests/test_e2e
+    Then export the path to the chromedriver executable as an environment variable preferrably called "chromedriver_path"
+    ```
+    export "chromedriver_path"=/usr/local/lib/ckan/default/bin/chromedriver
+    ```
+    Afterwards run this code in your terminal once you are within the repo:
+    ```
+    python -m pytest ckanext/socialite/tests/test_e2e/
+    ```
 
-    nosetests --nologcapture --with-pylons=test.ini
 
-To run the tests and produce a coverage report, first make sure you have
-coverage installed in your virtualenv (``pip install coverage``) then run::
-
-    python -m pytest ckanext/socialite/tests/test_e2e --with-coverage
-
-    nosetests --nologcapture --with-pylons=test.ini --with-coverage --cover-package=ckanext.socialite --cover-inclusive --cover-erase --cover-tests
+Plugin Backend Tests::
+    To run the backend tests, simply cd into the repo root then run:
+    ```
+    python -m pytest ckanext/socialite/tests/test_plugin.py
+    ```
 
 
 ---------------------------------

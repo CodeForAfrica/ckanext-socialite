@@ -73,11 +73,13 @@ class SocialitePlugin(plugins.SingletonPlugin):
 
     def get_ckanuser(self, user):
         """Return CKAN user if it already exists."""
+        #import pdb; pdb.set_trace()
         import ckan.model
 
         user_ckan = ckan.model.User.by_name(user)
 
         if user_ckan:
+            #import pdb; pdb.set_trace()
             user_dict = toolkit.get_action('user_show')(data_dict={'id': user_ckan.id})
             return user_dict
         else:
@@ -123,7 +125,6 @@ class SocialitePlugin(plugins.SingletonPlugin):
             user_ckan = self.get_ckanuser(user_account)
 
             if not user_ckan:
-                print(params['email'], 'the after email')
                 user_ckan = toolkit.get_action('user_create')(
                                         context={'ignore_auth': True},
                                         data_dict={'email': user_email,

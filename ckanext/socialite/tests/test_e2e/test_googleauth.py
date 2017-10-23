@@ -11,7 +11,8 @@ class GoogleAuthTests(unittest.TestCase):
 
     def setUp(self):
         """This prepares the test environment"""
-        self.driver = webdriver.Chrome("/usr/local/lib/ckan/default/bin/chromedriver")
+        self.chromedriver_path = os.getenv("chromedriver_path")
+        self.driver = webdriver.Chrome(self.chromedriver_path)
         self.driver.get("localhost:5000/user/login")
         self.driver.implicitly_wait(10)
         self.username_input = os.getenv("test_username")

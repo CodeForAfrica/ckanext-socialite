@@ -1,0 +1,53 @@
+{% ckan_extends %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="/base/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    {{ super() }}
+{% endblock %}
+
+
+{% block meta %}
+{% set ci=h.googleauth_get_clientid() %}
+{% set hd=h.googleauth_get_hosted_domain() %}
+  {{ super() }}
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="{{ ci }}">
+    <meta name="google-signin-hosted_domain" content="{{ hd }}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('g-signin-button', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+    <script type="text/javascript" src="/base/js/googleauth.js"></script>
+    <script type="text/javascript" src="/base/js/facebookauth.js"></script>
+    <script src="https://use.fontawesome.com/af91ed6914.js"></script>
+    <script type="text/javascript" src="/base/js/linkedinauth.js"></script>
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+        api_key: 86xzgmhw4t24sw
+        authorize: false
+        onLoad: onLinkedInLoad
+    </script>
+    <script>startApp();</script>
+
+{% endblock %}
